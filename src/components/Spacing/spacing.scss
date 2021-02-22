@@ -1,0 +1,116 @@
+@function replace($list, $old-value, $new-value, $recursive: false) {
+  $result: ();
+
+  @for $i from 1 through length($list) {
+    @if type-of(nth($list, $i)) == list and $recursive {
+      $result: append($result, replace(nth($list, $i), $old-value, $new-value, $recursive));
+    } @else {
+      @if nth($list, $i) == $old-value {
+        $result: append($result, $new-value);
+      } @else {
+        $result: append($result, nth($list, $i));
+      }
+    }
+  }
+
+  @return $result;
+}
+
+$spacing-base: 5;
+//multiple items to return
+$padding: ('top', 'left', 'bottom', 'right'); //validating top1 @warning
+//@direction list || string
+
+//spacing spacing
+@function spacing($scale) {
+  @return #{$spacing-base * $scale}px;
+}
+
+@mixin spacing($prop,$direction,$amount) {
+  // scale value
+  $value: spacing($amount);
+  $values: ('top', 'right', 'bottom', 'left');
+
+  @if ($direction == 'vertical') {
+    $values: replace($values, top, $value);
+    $values: replace($values, right, 0);
+    $values: replace($values, bottom, $value);
+    $values: replace($values, left, 0);
+  }
+
+  @if ($direction == 'horizontal') {
+    $values: replace($values, right, $value);
+    $values: replace($values, 'left', $value);
+    $values: replace($values, top, 0);
+    $values: replace($values, bottom, 0);
+  }
+
+  @if ($direction == 'left') {
+    $values: replace($values, 'top', 0);
+    $values: replace($values, 'left', $value);
+    $values: replace($values, 'bottom', 0);
+    $values: replace($values, 'right', 0);
+  }
+  @if ($direction == 'right') {
+    $values: replace($values, 'top', 0);
+    $values: replace($values, 'left', 0);
+    $values: replace($values, 'bottom', 0);
+    $values: replace($values, 'right', $value);
+  }
+
+  @if ($direction == 'top') {
+    $values: replace($values, 'top', $value);
+    $values: replace($values, 'left', 0);
+    $values: replace($values, 'bottom', 0);
+    $values: replace($values, 'right', 0);
+  }
+  @if ($direction == 'bottom') {
+    $values: replace($values, 'top', 0);
+    $values: replace($values, 'left', 0);
+    $values: replace($values, 'bottom', $value);
+    $values: replace($values, 'right', 0);
+  }
+  //to-do loop
+  @if ($direction == 'all') {
+    $values: replace($values, top, $value);
+    $values: replace($values, right, $value);
+    $values: replace($values, bottom, $value);
+    $values: replace($values, left, $value);
+  }
+  @if ($prop == 'padding') {
+    padding: $values;
+  }
+
+  @if ($prop == 'margin') {
+    margin: $values;
+  }
+}
+
+$sizes: (2, 3,6, 10, 14, 20);
+
+.spacing {
+  $directions: ('top', 'right', 'bottom', 'left', 'all', 'horizontal', 'vertical');
+  $props: ('padding', 'margin');
+
+  &--display-inline {
+    display: inline;
+  }
+
+  &--display-block {
+    display: block;
+  }
+
+  @each $prop in $props {
+    &--#{$prop} {
+      @each $direction in $directions {
+        &-#{$direction} {
+          @each $size in $sizes {
+            &-#{$size} {
+              @include spacing($prop, $direction, $size);
+            }
+          }
+        }
+      }
+    }
+  }
+}

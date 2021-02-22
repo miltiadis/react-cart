@@ -1,0 +1,75 @@
+// Design tokens settings
+$base-theme: (
+  grid:(
+    container: 1140px,
+    columns: 12,
+    gutters: 30px,
+  ),
+  breakpoint: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+  ),
+  colour: (
+    primary: #fafafa,
+    secondary: #5b6770,
+    tertiary: #fff,
+    quaternary: #1cafff,
+    neutral:(
+      'white': #fff,
+      'black': #000,
+    ),
+    border: (
+      primary: #5b6770,
+      secondary: #fff,
+      tertiary: #a8a8a8,
+      quaternary: #000,
+      quinary: #dfdfdf,
+    ),
+    button:(
+      primary:#28C8A4,
+      secondary: #fff,
+    )
+  ),
+  typography: (
+    font: (
+      family: (
+        primary: "'Open Sans', sans-serif",
+        secondary: "'museo-sans', sans-serif",
+      ),
+      size: (
+        primary: 16px,
+        secondary: 18px,
+        tertiary: 10px,
+      ),
+      font-weight:(
+        normal: 400,
+        bold: 600,
+      )
+    ),
+  ),
+  radius:(
+    primary: 4px,
+  ),
+  spacing:(
+    xsmall:2,
+    small:3,
+    base:5,
+    medium:10,
+    large:14,
+    x-large:14,
+  ),
+  shadow:(
+    primary: 0 1px 8px rgba(0, 0, 0, .1),
+    secondary: 0 2px 7px #dfdfdf,
+  ),
+  z-index:(
+    header:1,
+  ),
+  transition: (
+    primary: all 0.5s ease-out,
+  ),
+) !default;

@@ -1,0 +1,34 @@
+//SASS logic and tokens ( no classes )
+@import "src/sass/settings/index";
+
+.m-button {
+  display: inline-block;
+  font-weight: property("typography.font-weight.normal");
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: property("typography.size.primary");
+  line-height: 1.5;
+  border-radius: property("radius.primary");
+  cursor: pointer;
+  transition: property("transition.primary");
+
+  &--type {
+    &-primary {
+      transition: property("transition.primary");
+      background: property("colour.button.primary");
+      color: property("colour.button.secondary");
+
+      &:hover {
+        background: darken(property("colour.button.primary"), 10%);
+      }
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

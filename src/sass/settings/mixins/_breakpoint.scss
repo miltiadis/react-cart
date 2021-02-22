@@ -1,0 +1,25 @@
+// Expects that you design mobile-first
+@mixin breakpoint($width) {
+  @media only screen and (min-width: $width) { @content }
+}
+
+@mixin viewport($size) {
+  @if ($size == phone) {
+    @media (min-width: 0) and (max-width: property("breakpoint.md")) {
+      @content;
+    }
+  }
+
+  @if ($size == tablet) {
+    @media (min-width: 768px) and (max-width: property("breakpoint.xl")) {
+      @content;
+    }
+  }
+
+  @if ($size == desktop) {
+    @media (min-width: property("breakpoint.xl")) {
+      @content;
+    }
+  }
+}
+

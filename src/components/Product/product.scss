@@ -1,0 +1,42 @@
+//SASS logic and tokens ( no classes )
+@import "src/sass/settings/index";
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3)
+  }
+
+  50% {
+    opacity: 1
+  }
+}
+
+.c-product {
+
+  &__heading {
+    line-height: 1.2;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    margin: -30px -30px 20px;
+    padding: 50px;
+    background: property("colour.neutral.white");
+    border-bottom: 1px solid rgba(property("colour.border.quaternary"), 0.1);
+  }
+
+  &__item {
+    height: 430px;
+    background: property("colour.primary");
+    border: .5px solid property("colour.border.quinary");
+    margin-bottom: 50px;
+    padding: 30px;
+    box-shadow: property("shadow.secondary");
+    animation-name: zoomIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+}

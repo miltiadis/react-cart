@@ -1,0 +1,10 @@
+//SASS logic and tokens ( no classes )
+@import "src/sass/settings/index";
+
+.c-header {
+  position: sticky;
+  top: 0;
+  background: property("colour.neutral.white");
+  z-index: property("z-index.header");
+  box-shadow: property("shadow.primary");
+}

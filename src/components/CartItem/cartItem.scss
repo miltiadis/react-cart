@@ -1,0 +1,10 @@
+//SASS logic and tokens ( no classes )
+@import "src/sass/settings/index";
+
+.c-cart-item {
+  box-shadow: property("shadow.secondary");
+
+  &__image {
+   margin: auto;
+  }
+}

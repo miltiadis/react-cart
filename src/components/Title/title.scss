@@ -1,0 +1,8 @@
+//SASS logic and tokens ( no classes )
+@import "src/sass/settings/index";
+
+.c-title {
+  &__item {
+    border-bottom: 1px solid property("colour.border.tertiary");
+  }
+}

@@ -1,0 +1,143 @@
+//SASS logic and tokens ( no classes )
+@import "src/sass/settings/index";
+
+.text {
+  $module: &;
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  // Sizes
+  // ======================================
+  &--size-14 {
+    font-size: 14px;
+    line-height: 117%;
+  }
+
+  &--size-16 {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &--size-18 {
+    font-size: 18px;
+    line-height: 154%;
+  }
+
+  &--size-22 {
+    font-size: 22px;
+    line-height: 140%;
+  }
+
+  &--size-24 {
+    font-size: 24px;
+    line-height: 134%;
+  }
+
+  &--size-32 {
+    font-size: 32px;
+    line-height: 124%;
+  }
+
+  &--size-36 {
+    font-size: 36px;
+    line-height: 132%;
+  }
+
+  &--size-48 {
+    font-size: 48px;
+    line-height: 133%;
+  }
+
+  &--size-64 {
+    font-size: 64px;
+    line-height: 150%;
+  }
+
+  // Cases
+  // ======================================
+  &--cases-lower {
+    text-transform: lowercase;
+  }
+
+  &--cases-upper {
+    text-transform: uppercase;
+  }
+
+  &--cases-capitalise {
+    text-transform: capitalize;
+  }
+
+  // Colors
+  // ======================================
+  &--color-white {
+    color: #fff;
+  }
+
+  &--color-black {
+    color: #000;
+  }
+
+  &--color-turquoise {
+    color: #00b6a7;
+  }
+
+
+  // Align
+  // ======================================
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-center {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+
+  // Display
+  // ======================================
+  &--display-inline {
+    display: inline;
+  }
+
+  &--display-block {
+    display: block;
+  }
+
+  // Weight
+  // ======================================
+  &--weight-light {
+    font-weight: 300;
+  }
+
+  &--weight-regular {
+    font-weight: 400;
+  }
+
+  &--weight-medium {
+    font-weight: 500;
+  }
+
+  &--weight-semi-bold {
+    font-weight: 600;
+  }
+
+  &--weight-bold {
+    font-weight: 700;
+  }
+
+  &--weight-extra-bold {
+    font-weight: 800;
+  }
+
+  &--weight-black {
+    font-weight: 900;
+  }
+
+}

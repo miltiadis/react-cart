@@ -1,0 +1,6 @@
+//SASS logic and tokens ( no classes )
+@import "src/sass/settings/index";
+
+.logo {
+  width: property("spacing.base") * 30px;
+}
